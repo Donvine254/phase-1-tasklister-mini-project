@@ -68,7 +68,7 @@ If you look in the `index.html` file, you will see the following:
 
 Now take a look at the page in your browser. The rendered form looks like this:
 
-![TaskLister input form](https://curriculum-content.s3.amazonaws.com/phase-1/javascript-events/task_lister.png)
+![TaskLister input form](https://curriculum-content.s3.amazonaws.com/phase-1/javascript-events/t ask_lister.png)
 
 You can see each of the components that are in our form's HTML:
 
