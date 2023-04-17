@@ -18,18 +18,32 @@ document.addEventListener("DOMContentLoaded", () => {
 //this function will append and remove the new tasks to the DOM
 function getTasks() {
   const taskInput = document.getElementById("new-task-description").value;
+//we can only append the input if the user has typed something
+if (taskInput.length > 0) {
   const tasks = document.getElementById("tasks");
-  const newTasks = document.createElement("li");
-  newTasks.textContent = `${taskInput}  `;
-  tasks.appendChild(newTasks);
+  const newTask = document.createElement("li");
+  newTask.textContent = `${taskInput}  `;
+  tasks.appendChild(newTask);
   let btn = document.createElement("button");
   btn.innerText = "Delete";
   let editBtn = document.createElement("button");
-  newTasks.appendChild(btn);
+  newTask.appendChild(btn);
   btn.addEventListener("click", () => {
-    newTasks.remove();
+    newTask.remove();
   });
+}
   // Clear the input field after submitting the form
   document.getElementById("new-task-description").value = "";
-  editTasks();
+  newTasks.onclick = function () {
+    newTasks.contentEditable = "true";
+  };
+  //make the new tasks be saved in the browser. somehow this does not work
+//   newTasks.addEventListener("input", function() {
+//     let inputValue = newTasks.textContent;
+//     localStorage.setItem("newTasks", inputValue);
+// });
+// const savedValue = localStorage.getItem("newTasks");
+// newTasks.textContent = savedValue;
 }
+//I made the list content editable by editing the html to include contenteditable="true"
+
